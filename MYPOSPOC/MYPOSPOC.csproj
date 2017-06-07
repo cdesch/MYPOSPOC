@@ -71,11 +71,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MasterDetailControl.xaml.cs">
+      <DependentUpon>MasterDetailControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterDetailViewModel.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SettingsControl.xaml.cs">
       <DependentUpon>SettingsControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="SettingsViewModel.cs" />
+    <Compile Include="UserList.cs" />
+    <Compile Include="UserListViewModel.cs" />
+    <Compile Include="UserView.xaml.cs">
+      <DependentUpon>UserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserViewModel.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Page Include="CoolControl.xaml">
       <SubType>Designer</SubType>
@@ -97,7 +108,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MasterDetailControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
