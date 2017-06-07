@@ -46,8 +46,8 @@ namespace MYPOSPOC
         }
         public Settings()
         {
-            _LastName = "Desch";
-            _FirstName = "Chris";
+            _LastName = "MyLast Name";
+            _FirstName = "My First Name";
         }
 
         /*
