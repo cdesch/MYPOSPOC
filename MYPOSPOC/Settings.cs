@@ -10,6 +10,24 @@ namespace MYPOSPOC
     class Settings : INotifyPropertyChanged
     {
 
+        string _PrinterName;
+        public string PrinterName
+        {
+            get
+            {
+                return _PrinterName;
+            }
+            set
+            {
+                if (_PrinterName != value)
+                {
+                    _PrinterName = value;
+                    Properties.Settings.Default.PrinterName = _PrinterName;
+                    Properties.Settings.Default.Save();
+                    RaisePropertyChanged("PrinterName");
+                }
+            }
+        }
 
         string _FirstName;
         public string FirstName
@@ -48,6 +66,9 @@ namespace MYPOSPOC
         {
             _LastName = "MyLast Name";
             _FirstName = "My First Name";
+            Console.WriteLine("here");
+            Console.WriteLine(Properties.Settings.Default.PrinterName);
+            _PrinterName = Properties.Settings.Default.PrinterName;
         }
 
         /*
@@ -69,10 +90,19 @@ namespace MYPOSPOC
         */
         //Delegate
 
+        private void Save()
+        {
+
+        }
+
         void RaisePropertyChanged(string prop)
         {
-            if (PropertyChanged != null) { PropertyChanged(this, new PropertyChangedEventArgs(prop)); }
+            if (PropertyChanged != null) {
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            }
         }
         public event PropertyChangedEventHandler PropertyChanged;
+
+
     }
 }
