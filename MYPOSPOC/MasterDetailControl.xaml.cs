@@ -22,11 +22,15 @@ namespace MYPOSPOC
     {
 
 
-        private MasterDetailViewModel viewModel;
+        //private MasterDetailViewModel viewModel;
+        private UserListViewModel viewModel;
+
         public MasterDetailControl()
         {
             InitializeComponent();
-            viewModel = new MasterDetailViewModel();
+            //viewModel = new MasterDetailViewModel();
+            viewModel =  UserListViewModel.Instance();
+
             this.DataContext = viewModel;
         }
     }

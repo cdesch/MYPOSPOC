@@ -6,17 +6,35 @@
              xmlns:local="clr-namespace:MYPOSPOC"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-   
+
+
+    <UserControl.Resources>
+
+        <DataTemplate x:Key="UserViewTemplate" >
+            <local:UserView />
+        </DataTemplate>
+    </UserControl.Resources>
+
     <Grid>
 
-        <ListView HorizontalAlignment="Left" Height="280" Margin="10,10,0,0" VerticalAlignment="Top" Width="121" ItemsSource="{Binding CurrentUserList}" SelectedItem="{Binding SelectedUser}">
+        <ListView HorizontalAlignment="Left" Height="280" Margin="10,10,0,0" VerticalAlignment="Top" Width="121"  ItemsSource="{Binding CustomerList}" SelectedItem="{Binding SelectedCustomer}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="FirstName" DisplayMemberBinding="{Binding FirstName}" Width="50"/>
-                        <GridViewColumn Header="LastName" DisplayMemberBinding="{Binding LastName}" Width="100"/>
+                    <GridViewColumn Header="LastName" DisplayMemberBinding="{Binding LastName}" Width="100"/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <ContentControl Content="{Binding SelectedCustomer}" ContentTemplate="{StaticResource UserViewTemplate}" Margin="145,10,7,17" RenderTransformOrigin="0.5,0.5" >
+            <ContentControl.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.237"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.409"/>
+                </TransformGroup>
+            </ContentControl.RenderTransform>
+        </ContentControl>
 
     </Grid>
 </UserControl>
