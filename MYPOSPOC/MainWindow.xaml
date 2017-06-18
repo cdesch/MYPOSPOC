@@ -11,7 +11,7 @@
 
         xmlns:local="clr-namespace:MYPOSPOC"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525"
+        Title="MainWindow" Height="387" Width="916"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Controls:MetroWindow.RightWindowCommands>
@@ -32,7 +32,7 @@
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="203" Margin="14,41,0,0" VerticalAlignment="Top" Width="496">
+        <TabControl HorizontalAlignment="Left" Height="203" Margin="14,41,0,0" VerticalAlignment="Top" Width="866">
             <TabItem Header="TabItem">
                 <Grid Background="#FFE5E5E5">
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="366,63,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
@@ -47,6 +47,9 @@
             </TabItem>
             <TabItem Header="Master Detail">
                 <local:MasterDetailControl />
+            </TabItem>
+            <TabItem Header="Master Detail Reusable">
+                <local:MasterDetailView />
             </TabItem>
         </TabControl>
         <Button Content="Show Dialog" HorizontalAlignment="Left" Margin="35,269,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>

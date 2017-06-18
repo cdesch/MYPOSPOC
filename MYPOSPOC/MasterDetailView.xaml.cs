@@ -20,9 +20,15 @@ namespace MYPOSPOC
     /// </summary>
     public partial class MasterDetailView : UserControl
     {
+        private MasterDetailViewModel viewModel;
+
         public MasterDetailView()
         {
             InitializeComponent();
+            //viewModel = new MasterDetailViewModel();
+            viewModel = MasterDetailViewModel.Instance();
+
+            this.DataContext = viewModel;
         }
     }
 }
